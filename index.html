@@ -565,7 +565,7 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         .product-detail-main-image-container { aspect-ratio: 1 / 1; width: 100%; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
         .product-detail-main-image-container .image-placeholder-text { font-size: 1.1em; font-weight: 600; color: #aaa; }
         .product-detail-info { display: flex; flex-direction: column; }
-        .product-detail-title { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 600; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .product-detail-title { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 600; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .product-detail-price { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 0.75rem; font-weight: 700; }
         .product-detail-description { margin-bottom: 0.5rem; line-height: 1.7; color: var(--text-color); font-size: 1rem; white-space: pre-line; }
         .product-detail-actions { display: flex; gap: 1rem; margin-top: auto; flex-wrap: wrap; }
@@ -604,13 +604,14 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             display: flex;
             flex-direction: column;
             overflow-y: auto; /* Enable scrolling for tall content */
+            padding-bottom: 1.5rem;
         }
 
 
         .product-short-description {
             font-size: 1rem;
             color: #555;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             line-height: 1.5;
         }
 
@@ -2643,13 +2644,13 @@ Watermark ছাড়া HD এক্সপোর্ট, হাজারো প্
     • এক্সেস না পেলে বা সমস্যা সমাধান সম্ভব না হলে ১০০% মানিব্যাক গ্যারান্টি।
     • আমরা প্রতিটি অর্ডার হাতে ধরে সাপোর্ট দিয়ে থাকি যাতে আপনি নিশ্চিন্তে প্রোডাক্ট ব্যবহার `,
     category: "subscription",
-    price: 0,
+    price: 49,
     image: "product_images/CANVAPRO.png",
     isFeatured: true,
     durations: [
-        { label: `6 MONTH`, price: 49 },
-        { label: `1 YEAR`, price: 99 },
-        { label: `3 YEARS`, price: 149 }
+        { label: `6 MONTH - 49 Taka`, price: 49 },
+        { label: `1 YEAR - 99 Taka`, price: 99 },
+        { label: `3 YEARS - 149 Taka`, price: 149 }
     ],
     reviews: [
         {
@@ -2707,11 +2708,11 @@ GPT‑4o, GPT‑4.1, এবং GPT‑4.5 সহ ফুল ফিচার আন
     • মানিব্যাক গ্যারান্টি
     • ১৫ মিনিটের মধ্যে ইমেইলে ডেলিভারি`,
     category: "subscription",
-    price: 0,
+    price: 499,
     image: "product_images/Chatgpt1.png",
     isFeatured: true,
     durations: [
-        { label: `1 MONTH`, price: 499 }
+        { label: `1 MONTH - 499 Taka`, price: 499 }
     ]
 },
 // ⬇️ Add new product object below this line, inside the array ⬇️
@@ -2765,13 +2766,13 @@ Google, Facebook, Instagram, LinkedIn, TikTok এবং Telegram থেকে �
 
 আপনার হোয়াটসঅ্যাপ মার্কেটিংকে এক ধাপ এগিয়ে নিতে আজই আমাদের সাথে যুক্ত হোন! 🚀📈`,
     category: "subscription",
-    price: 0,
+    price: 699,
     image: "product_images/WASENDERR.png",
     isFeatured: true,
     durations: [
-        { label: `6 MONTH`, price: 699 },
-        { label: `1 YEAR`, price: 999 },
-        { label: `LIFETIME`, price: 1999 }
+        { label: `6 MONTH - 699 Taka`, price: 699 },
+        { label: `1 YEAR - 999 Taka`, price: 999 },
+        { label: `LIFETIME - 1999 Taka`, price: 1999 }
     ]
 },
 // ⬇️ Add new product object below this line, inside the array ⬇️
@@ -3105,10 +3106,9 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
 
         function addToCart(productData) {
             if (!productData || typeof productData.id === 'undefined') { console.error("Invalid product data to addToCart:", productData); showToast('Invalid product.', 'error'); return; }
-            let priceToAdd = parseFloat(productData.price); let selectedDurationLabel = null;
-            const detailDurationSelector = document.getElementById(`duration-detail-${productData.id}`);
-            if (detailDurationSelector && detailDurationSelector.value) { const selectedOption = detailDurationSelector.options[detailDurationSelector.selectedIndex]; priceToAdd = parseFloat(selectedOption.value); selectedDurationLabel = selectedOption.text.split(' - ')[0];
-            } else if (productData.currentSelectedPrice) { priceToAdd = parseFloat(productData.currentSelectedPrice); if (Array.isArray(productData.durations)) { const durationInfo = productData.durations.find(d => parseFloat(d.price) === priceToAdd); if (durationInfo) selectedDurationLabel = durationInfo.label; } }
+            let priceToAdd = parseFloat(productData.price);
+            let selectedDurationLabel = productData.selectedDurationLabel || null;
+
             const existingItem = cart.find(item => item.id === productData.id && parseFloat(item.price) === priceToAdd && (item.selectedDurationLabel || null) === (selectedDurationLabel || null) );
             if (existingItem) { existingItem.quantity = (existingItem.quantity || 1) + 1; showToast(`${productData.name}${selectedDurationLabel ? ` (${selectedDurationLabel})` : ''} quantity updated!`, 'info');
             } else { cart.push({ ...productData, price: priceToAdd, quantity: 1, selectedDurationLabel: selectedDurationLabel }); showToast(`${productData.name}${selectedDurationLabel ? ` (${selectedDurationLabel})` : ''} added to cart!`, 'success'); }
@@ -3194,7 +3194,6 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
         }
 
         function setupEventListeners() {
-            window.addEventListener('resize', adjustProductDetailHeight);
             if (domElements.cartIcon) { domElements.cartIcon.addEventListener('click', () => { navigateTo('cart'); }); }
             if (domElements.cartClose) { domElements.cartClose.addEventListener('click', () => { domElements.cartModal.style.display = 'none'; }); }
             if (domElements.checkoutBtnCart) { domElements.checkoutBtnCart.addEventListener('click', () => { if (cart.length === 0) { showToast('Your cart is empty! Cannot proceed to checkout.', 'error'); return; } domElements.cartModal.style.display = 'none'; navigateTo('checkout', null, null, true); }); }
@@ -3553,7 +3552,7 @@ function renderReviews(product) {
     // Duration selector and price
     let durationSelectorHTML = '';
     let currentPrice = parseFloat(product.price);
-    const hasDuration = product.category === 'subscription' && Array.isArray(product.durations) && product.durations.length > 0;
+    const hasDuration = Array.isArray(product.durations) && product.durations.length > 0;
 
     if (hasDuration) {
         currentPrice = parseFloat(product.durations[0].price);
@@ -3561,7 +3560,7 @@ function renderReviews(product) {
             <div class="duration-selector" style="margin-bottom:0.75rem;display:block;">
                 <label for="duration-detail-${product.id}" style="font-weight:600;margin-bottom:0.5rem;display:block;">Select Duration:</label>
                 <select id="duration-detail-${product.id}" data-product-id="${product.id}" style="width:100%;padding:0.7rem;border:1px solid #ccc;border-radius:6px;font-size:1rem;">
-                    ${product.durations.map(d => `<option value="${parseFloat(d.price)}" ${parseFloat(d.price) === currentPrice ? 'selected' : ''}>${d.label} - ৳${parseFloat(d.price).toFixed(2)}</option>`).join('')}
+                    ${product.durations.map(d => `<option value="${parseFloat(d.price)}">${d.label}</option>`).join('')}
                 </select>
             </div>`;
     }
@@ -3633,7 +3632,7 @@ function renderReviews(product) {
                 if (durationSel && durationSel.value) {
                     const selectedOption = durationSel.options[durationSel.selectedIndex];
                     productToBuy.price = parseFloat(selectedOption.value);
-                    productToBuy.selectedDurationLabel = selectedOption.text.split(' - ')[0];
+                    productToBuy.selectedDurationLabel = selectedOption.text;
                 } else if (Array.isArray(productToBuy.durations) && productToBuy.durations.length > 0) {
                     productToBuy.price = parseFloat(productToBuy.durations[0].price);
                     productToBuy.selectedDurationLabel = productToBuy.durations[0].label;
@@ -3656,36 +3655,18 @@ function renderReviews(product) {
                 if (durationSel && durationSel.value) {
                     const selectedOption = durationSel.options[durationSel.selectedIndex];
                     productToAdd.price = parseFloat(selectedOption.value);
+                    productToAdd.selectedDurationLabel = selectedOption.text;
                 } else if (Array.isArray(productToAdd.durations) && productToAdd.durations.length > 0) {
                     productToAdd.price = parseFloat(productToAdd.durations[0].price);
+                    productToAdd.selectedDurationLabel = productToAdd.durations[0].label;
                 }
                 addToCart(productToAdd);
             }
         });
     }
 
-    adjustProductDetailHeight();
 }
 
-function adjustProductDetailHeight() {
-    const gallery = document.querySelector('#productDetailPage .product-detail-gallery');
-    const mainInfo = document.querySelector('#productDetailPage .product-detail-main');
-
-    if (gallery && mainInfo && window.innerWidth >= 769) {
-        if (mainInfo.classList.contains('no-duration')) {
-            mainInfo.style.height = '';
-            return;
-        }
-        requestAnimationFrame(() => {
-            const galleryHeight = gallery.offsetHeight;
-            if (galleryHeight > 0) {
-                mainInfo.style.height = `${galleryHeight}px`;
-            }
-        });
-    } else if (mainInfo) {
-        mainInfo.style.height = ''; // Reset on mobile
-    }
-}
 
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
