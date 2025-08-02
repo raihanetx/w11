@@ -3693,7 +3693,7 @@ function renderReviews(product) {
     // Duration selector and price
     let durationSelectorHTML = '';
     let currentPrice = parseFloat(product.price);
-    const hasDuration = product.category === 'subscription' && Array.isArray(product.durations) && product.durations.length > 0;
+    const hasDuration = Array.isArray(product.durations) && product.durations.length > 0;
 
     if (hasDuration) {
         currentPrice = parseFloat(product.durations[0].price);
@@ -3701,7 +3701,7 @@ function renderReviews(product) {
             <div class="duration-selector">
                 <label class="duration-label" for="duration">Select Duration:</label>
                 <select id="duration-detail-${product.id}" data-product-id="${product.id}">
-                    ${product.durations.map(d => `<option value="${parseFloat(d.price)}" data-price="${parseFloat(d.price)}">${d.label} - ৳${parseFloat(d.price).toFixed(2)}</option>`).join('')}
+                    ${product.durations.map(d => `<option value="${parseFloat(d.price)}" data-price="${parseFloat(d.price)}">${d.label} - ${d.price} taka</option>`).join('')}
                 </select>
             </div>`;
     }
