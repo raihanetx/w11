@@ -466,7 +466,7 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             background-color: var(--primary-color);
             color: white;
             padding: 0.15rem 0.3rem;
-            border-radius: 10px;
+            border-radius: 6px;
             font-size: 0.325rem;
             font-weight: 600;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -475,13 +475,14 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             position: absolute;
             top: 5px;
             right: 5px;
-            background-color: #e74c3c;
-            color: white;
+            background-color: #fee;
+            color: #e74c3c;
             padding: 0.15rem 0.3rem;
-            border-radius: 10px;
+            border-radius: 6px;
             font-size: 0.325rem;
             font-weight: 600;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            border: 1px solid #e74c3c;
         }
         
         .product-card-content {
@@ -722,16 +723,15 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         .checkout-container { background-color: #f9f9f9; padding: 2rem; border-radius: 12px; width: 100%; max-width: 600px; margin: 2rem auto; position: relative; }
         .checkout-container .page-title { text-align: left; color: var(--text-color); margin-bottom: 2rem; font-size: 1.8em; font-weight: 700; }
         .checkout-container .page-title small { display: none; }
-        .checkout-container .form-section { margin-bottom: 1.5rem; padding: 1.5rem; background-color: #ffffff; border-radius: 8px; border: 1px solid #e0e0e0; }
-        .checkout-container .form-section:last-of-type { border-bottom: none; padding-bottom: 1.5rem; }
+        .checkout-container .form-section { margin-bottom: 1.5rem; padding: 1.5rem; background-color: #ffffff; border-radius: 8px; border: 1px solid #ced4da; }
         .checkout-container .form-section .section-title { font-size: 1.2em; color: var(--primary-color); margin-bottom: 1.2rem; font-weight: 600; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color); display: inline-block; }
         .checkout-container .form-group { margin-bottom: 1.2rem; }
         .checkout-container .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9em; font-weight: 500; color: #555; }
         .checkout-container .form-group input[type="text"], .checkout-container .form-group input[type="email"], .checkout-container .form-group input[type="tel"] { padding: 12px 15px; border-radius: 6px; background-color: #fdfdfd; border: 1px solid #ced4da; width: 100%; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease; font-size: 1em; }
-        .checkout-container .form-group input[type="text"]:focus, .checkout-container .form-group input[type="email"]:focus, .checkout-container .form-group input[type="tel"]:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(143,135,241,0.2); outline: none; }
+        .checkout-container .form-group input[type="text"]:focus, .checkout-container .form-group input[type="email"]:focus, .checkout-container .form-group input[type="tel"]:focus { border-color: var(--primary-color); box-shadow: none; outline: none; }
         .custom-select-wrapper { position: relative; width: 100%; margin-bottom: 1.5rem; }
         .custom-select-trigger { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; border: 1px solid #ced4da; border-radius: 6px; background-color: #ffffff; color: var(--text-color); font-size: 1em; cursor: pointer; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-        .custom-select-trigger:hover, .custom-select-wrapper.open .custom-select-trigger { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(143,135,241,0.2); }
+        .custom-select-trigger:hover, .custom-select-wrapper.open .custom-select-trigger { border-color: var(--primary-color); box-shadow: none; }
         .custom-select-trigger .custom-select-arrow { transition: transform 0.3s ease; fill: currentColor; }
         .custom-select-wrapper.open .custom-select-trigger .custom-select-arrow { transform: rotate(180deg); }
         #selected-payment-method-text { color: #757575; }
@@ -759,9 +759,9 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         .checkout-container .summary-total { border-top: 1px solid #d0d0d0; padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
         .checkout-container .summary-total-label { font-size: 1.1em; font-weight: 600; }
         .checkout-container .summary-total-value { font-size: 1.3em; font-weight: 700; color: var(--primary-color); }
-        .coupon-input-group { display: flex; }
-        .coupon-input-group input { flex-grow: 1; border-top-right-radius: 0; border-bottom-right-radius: 0; }
-        .apply-coupon-btn { background-color: var(--primary-color); color: white; border: none; padding: 12px 15px; border-radius: 0 6px 6px 0; cursor: pointer; font-weight: 600; transition: background-color 0.3s; }
+        .coupon-input-group { display: flex; gap: 10px; }
+        .coupon-input-group input { flex-grow: 1; }
+        .apply-coupon-btn { background-color: var(--primary-color); color: white; border: none; padding: 12px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: background-color 0.3s; }
         .apply-coupon-btn:hover { background-color: #7a70e8; }
         .checkout-container .submit-btn { padding: 15px 25px; font-size: 1.1em; border-radius: 8px; background-color: var(--primary-color); color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(143,135,241,0.3); width: 100%; cursor: pointer; transition: all 0.3s ease; font-weight: 600; }
         .checkout-container .submit-btn:hover { background-color: #7a70e8; box-shadow: 0 6px 20px rgba(143,135,241,0.4); transform: translateY(-2px); }
@@ -1169,6 +1169,15 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
                 height: 120px;
                 padding-top: 1.5rem;
                 padding-bottom: 0.5;
+                box-shadow: none;
+            }
+            .category:hover, .category:active {
+                transform: none;
+                box-shadow: none;
+                border-color: #e9e9e9;
+            }
+            .category.selected {
+                border: 2px solid var(--primary-color);
             }
             .footer-brand-info { display: none !important; }
             .footer-content { grid-template-columns: 1fr; gap: 1.8rem; }
@@ -1662,6 +1671,147 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
         }
         .review-modal .close-modal:hover { background:#f8f9fa; }
         /* --- END OF NEW REVIEW MODAL STYLES --- */
+
+        /* --- START OF NEW PRODUCT DETAIL STYLES --- */
+
+        /* Mobile Styles (Default) */
+        .product-image {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #6c757d;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-info {
+            padding: 0;
+        }
+
+        .product-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #212529;
+            margin-top: 5px; /* Move name down slightly */
+        }
+
+        .product-description {
+            color: #6c757d;
+            margin-bottom: 8px; /* Reduced gap */
+            font-size: 16px;
+        }
+
+        .product-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #8F87F1;
+            margin-bottom: 10px; /* Reduced gap */
+        }
+
+        .duration-selector {
+            margin-bottom: 15px; /* Reduced gap */
+        }
+
+        .duration-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-buy {
+            background-color: #8F87F1;
+            color: white;
+        }
+
+        .btn-cart {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .product-details-container {
+                display: flex;
+                gap: 30px;
+                margin: 0 auto;
+                max-width: 1000px;
+            }
+
+            .product-image {
+                width: 50%;
+                padding-top: 28.125%; /* Maintains 16:9 aspect ratio for 50% width */
+                margin-bottom: 0;
+            }
+
+            .product-info {
+                width: 50%;
+            }
+
+            .product-name {
+                font-size: 32px;
+                margin-top: 10px; /* Move name down more on desktop */
+            }
+
+            .product-description {
+                margin-bottom: 6px; /* Further reduced gap */
+            }
+
+            .product-price {
+                font-size: 36px;
+                margin-bottom: 8px; /* Further reduced gap */
+            }
+
+            .duration-selector {
+                width: 100%;
+                margin-bottom: 12px; /* Further reduced gap */
+            }
+
+            .buttons {
+                flex-direction: row;
+            }
+        }
+
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .product-image {
+                padding-top: 28.125%; /* Still maintains 16:9 aspect ratio */
+            }
+
+            .product-name {
+                margin-top: 15px; /* Move name down even more on large screens */
+            }
+        }
+        /* --- END OF NEW PRODUCT DETAIL STYLES --- */
+
         /* --- END OF FILE style.css --- */
     </style>
 </head>
@@ -3251,6 +3401,14 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
                     }
                 } else if (pageName === 'products') {
                     filterProducts((typeof context === 'string' && context !== 'null' && context !== 'undefined' && context !== "") ? context : 'all', searchTerm);
+                    const categoryCards = document.querySelectorAll('.categories .category');
+                    categoryCards.forEach(card => {
+                        card.classList.remove('selected');
+                        const onclickAttr = card.getAttribute('onclick');
+                        if (onclickAttr && onclickAttr.includes(`'${context}'`)) {
+                            card.classList.add('selected');
+                        }
+                    });
                 } else if (pageName === 'cart') {
                     updateCartPage();
                 } else if (pageName === 'checkout') {
@@ -3382,16 +3540,16 @@ Microsoft-এর অফিসিয়াল Activation Key, ইমেইলে ড
             const skeletonDiv = document.createElement('div'); skeletonDiv.className = 'skeleton'; imageContainer.appendChild(skeletonDiv);
             const placeholderTextSpan = document.createElement('span'); placeholderTextSpan.className = 'image-placeholder-text'; placeholderTextSpan.style.display = 'none'; placeholderTextSpan.textContent = `Image for ${product.name}`; imageContainer.appendChild(placeholderTextSpan);
             if (product.image && product.image !== 'path/to/default-product-image.jpg') { const img = document.createElement('img'); img.src = product.image; img.alt = product.name; img.className = 'image-fade-in'; imageContainer.appendChild(img); setupSingleImageLoading(img); } else { skeletonDiv.style.display = 'none'; placeholderTextSpan.style.display = 'block'; }
-            if (product.stock > 0) {
-                const stockBadge = document.createElement('div');
-                stockBadge.className = 'stock-badge';
-                stockBadge.textContent = 'Stock';
-                imageContainer.appendChild(stockBadge);
-            } else if (product.stock === 0) {
+            if (product.stock === 0) {
                 const stockOutOverlay = document.createElement('div');
                 stockOutOverlay.className = 'stock-out-overlay';
                 stockOutOverlay.textContent = 'Stock Out';
                 imageContainer.appendChild(stockOutOverlay);
+            } else { // Handles stock > 0 and stock being undefined
+                const stockBadge = document.createElement('div');
+                stockBadge.className = 'stock-badge';
+                stockBadge.textContent = 'Stock';
+                imageContainer.appendChild(stockBadge);
             }
             let buttonsHTML = isFeaturedCard ? `<button class="view-details-card full-width-button">View Details</button>` : `<button class="buy-now-card">Buy Now</button><button class="view-details-card">View Details</button>`;
             
@@ -3527,41 +3685,23 @@ function renderReviews(product) {
     delete product.currentSelectedPrice;
 
     // Image container
-    const imageContainer = document.createElement('div');
-    imageContainer.className = 'product-detail-main-image-container';
-    const skeletonDiv = document.createElement('div');
-    skeletonDiv.className = 'skeleton';
-    imageContainer.appendChild(skeletonDiv);
-    const placeholderTextSpan = document.createElement('span');
-    placeholderTextSpan.className = 'image-placeholder-text';
-    placeholderTextSpan.style.display = 'none';
-    placeholderTextSpan.textContent = `Image for ${product.name}`;
-    imageContainer.appendChild(placeholderTextSpan);
-
+    let imageHTML = `<div class="product-image">Product Image</div>`;
     if (product.image && product.image !== 'path/to/default-product-image.jpg') {
-        const img = document.createElement('img');
-        img.src = product.image;
-        img.alt = product.name;
-        img.className = 'image-fade-in';
-        imageContainer.appendChild(img);
-        setupSingleImageLoading(img);
-    } else {
-        skeletonDiv.style.display = 'none';
-        placeholderTextSpan.style.display = 'block';
+        imageHTML = `<div class="product-image" style="background-image: url('${product.image}'); background-size: cover; background-position: center;"></div>`;
     }
 
     // Duration selector and price
     let durationSelectorHTML = '';
     let currentPrice = parseFloat(product.price);
-    const hasDuration = product.category === 'subscription' && Array.isArray(product.durations) && product.durations.length > 0;
+    const hasDuration = Array.isArray(product.durations) && product.durations.length > 0;
 
     if (hasDuration) {
         currentPrice = parseFloat(product.durations[0].price);
         durationSelectorHTML = `
-            <div class="duration-selector" style="margin-bottom:0.75rem;display:block;">
-                <label for="duration-detail-${product.id}" style="font-weight:600;margin-bottom:0.5rem;display:block;">Select Duration:</label>
-                <select id="duration-detail-${product.id}" data-product-id="${product.id}" style="width:100%;padding:0.7rem;border:1px solid #ccc;border-radius:6px;font-size:1rem;">
-                    ${product.durations.map(d => `<option value="${parseFloat(d.price)}" ${parseFloat(d.price) === currentPrice ? 'selected' : ''}>${d.label} - ৳${parseFloat(d.price).toFixed(2)}</option>`).join('')}
+            <div class="duration-selector">
+                <label class="duration-label" for="duration">Select Duration:</label>
+                <select id="duration-detail-${product.id}" data-product-id="${product.id}">
+                    ${product.durations.map(d => `<option value="${parseFloat(d.price)}" data-price="${parseFloat(d.price)}">${d.label} - ${d.price} taka</option>`).join('')}
                 </select>
             </div>`;
     }
@@ -3588,22 +3728,17 @@ function renderReviews(product) {
     // Related products
     const relatedProductsHTML = renderRelatedProductsSection(product.id, product.category);
 
-    const tempImageDiv = document.createElement('div');
-    tempImageDiv.appendChild(imageContainer);
-
     detailPageElement.innerHTML = `
-        <div class="product-detail-layout">
-            <div class="product-detail-gallery">
-                ${tempImageDiv.innerHTML}
-            </div>
-            <div class="product-detail-main${!hasDuration ? ' no-duration' : ''}">
-                <h2 class="product-detail-title">${product.name || 'N/A'}</h2>
-                <p class="product-short-description">${product.description || ''}</p>
-                <div class="product-detail-price">৳${currentPrice.toFixed(2)}</div>
+        <div class="product-details-container">
+            ${imageHTML}
+            <div class="product-info">
+                <h1 class="product-name">${product.name || 'N/A'}</h1>
+                <p class="product-description">${product.description || ''}</p>
+                <div class="product-price" id="product-price">৳${currentPrice.toFixed(2)}</div>
                 ${durationSelectorHTML}
-                <div class="product-detail-actions">
-                    <button class="buy-now-detail" data-id="${product.id}"><i class="fas fa-bolt"></i> Buy Now</button>
-                    <button class="add-to-cart-detail" data-id="${product.id}"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                <div class="buttons">
+                    <button class="btn btn-buy" data-id="${product.id}">Buy Now</button>
+                    <button class="btn btn-cart" data-id="${product.id}">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -3617,12 +3752,12 @@ function renderReviews(product) {
     if (detailDurationSelector) {
         detailDurationSelector.addEventListener('change', (e) => {
             const newPrice = parseFloat(e.target.value);
-            const priceElement = detailPageElement.querySelector('.product-detail-price');
+            const priceElement = detailPageElement.querySelector('.product-price');
             if (priceElement) priceElement.textContent = `৳${newPrice.toFixed(2)}`;
         });
     }
 
-    const buyNowDetailButton = detailPageElement.querySelector('.buy-now-detail');
+    const buyNowDetailButton = detailPageElement.querySelector('.btn-buy');
     if (buyNowDetailButton) {
         buyNowDetailButton.addEventListener('click', (e) => {
             const productId = parseInt(e.currentTarget.dataset.id);
@@ -3645,7 +3780,7 @@ function renderReviews(product) {
         });
     }
 
-    const addToCartDetailButton = detailPageElement.querySelector('.add-to-cart-detail');
+    const addToCartDetailButton = detailPageElement.querySelector('.btn-cart');
     if (addToCartDetailButton) {
         addToCartDetailButton.addEventListener('click', (e) => {
             const productId = parseInt(e.currentTarget.dataset.id);
