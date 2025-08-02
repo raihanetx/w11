@@ -1730,6 +1730,10 @@ src="https://www.facebook.com/tr?id=482675157669768&ev=PageView&noscript=1"
             margin-top: 20px;
         }
 
+        .vertical-buttons {
+            flex-direction: column;
+        }
+
         .btn {
             padding: 14px;
             border: none;
@@ -3728,6 +3732,8 @@ function renderReviews(product) {
     // Related products
     const relatedProductsHTML = renderRelatedProductsSection(product.id, product.category);
 
+    const buttonsContainerClass = hasDuration ? 'buttons' : 'buttons vertical-buttons';
+
     detailPageElement.innerHTML = `
         <div class="product-details-container">
             ${imageHTML}
@@ -3736,7 +3742,7 @@ function renderReviews(product) {
                 <p class="product-description">${product.description || ''}</p>
                 <div class="product-price" id="product-price">৳${currentPrice.toFixed(2)}</div>
                 ${durationSelectorHTML}
-                <div class="buttons">
+                <div class="${buttonsContainerClass}">
                     <button class="btn btn-buy" data-id="${product.id}">Buy Now</button>
                     <button class="btn btn-cart" data-id="${product.id}">Add to Cart</button>
                 </div>
